@@ -33,6 +33,10 @@
       "PackagePath": "staticwebassets\\img\\cat-1.jpg"
     },
     {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-10.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-10.jpg"
+    },
+    {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-2.jpg",
       "PackagePath": "staticwebassets\\img\\cat-2.jpg"
     },
@@ -51,6 +55,18 @@
     {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-6.jpg",
       "PackagePath": "staticwebassets\\img\\cat-6.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-7.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-7.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-8.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-8.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\cat-9.jpg",
+      "PackagePath": "staticwebassets\\img\\cat-9.jpg"
     },
     {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\offer-1.png",
