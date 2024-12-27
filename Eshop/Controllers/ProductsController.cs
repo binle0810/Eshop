@@ -25,6 +25,11 @@ namespace Eshop.Controllers
             var applicationDbContext = _context.Products.Include(p => p.Category).Include(p => p.Color).Include(p => p.Size);
             return View(await applicationDbContext.ToListAsync());
         }
+        public async Task<IActionResult> ProductByCategory(int categoryid)
+        {
+            var applicationDbContext = _context.Products.Where(p=>p.CatogeryId==categoryid).Include(p => p.Category).Include(p => p.Color).Include(p => p.Size);
+            return View("index",await applicationDbContext.ToListAsync());
+        }
 
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
