@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Eshop.Data;
 using Eshop.Models;
 using Eshop.Models.ViewModel;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Eshop.Controllers
 {
@@ -54,8 +55,8 @@ namespace Eshop.Controllers
                   PageSize = PageSize,
                   PageIndex = PageIndex,
                   TotalCount = String.IsNullOrEmpty(keywork)
-    ? _context.Products.Count()
-    : _context.Products.Where(p => p.ProductName.Contains(keywork)).Count()
+                  ? _context.Products.Count()
+                  : _context.Products.Where(p => p.ProductName.Contains(keywork)).Count()
         };
             var product = String.IsNullOrEmpty(keywork)?_context.Products:_context.Products.Where(p=>p.ProductName.Contains( keywork));
               if (PageIndex < 1)
@@ -104,13 +105,50 @@ namespace Eshop.Controllers
 
             return View(product);
         }
+        public class PriceRange
+        {
+            public int Min { get; set; }
+            public int Max { get;set ;}
+        }
+        [HttpPost]
+        public IActionResult GetFilteredProducts([FromBody] FilterData filter)
+        {
+            // Lấy danh sách sản phẩm ban đầu
+         var filteredProducts = _context.Products.ToList();
+
+            // Kiểm tra nếu bộ lọc PriceRanges không rỗng và hợp lệ
+            if (filter.PriceRanges != null && filter.PriceRanges.Count > 0 && !filter.PriceRanges.Contains("all"))
+            {
+                List<PriceRange> priceRanges = new List<PriceRange>();
+
+                foreach (var range in filter.PriceRanges)
+                {
+                    var values = range.Split("-").ToArray();
+                    PriceRange priceRange = new PriceRange
+                    {
+                       Min = Int16.Parse(values[0]),
+                        Max = Int16.Parse(values[1])
+                    };
+                    priceRanges.Add(priceRange);
+                }
+
+                // Lọc các sản phẩm dựa trên khoảng giá
+                filteredProducts = filteredProducts.Where(p =>
+                    priceRanges.Any(r => p.ProductPrice >= r.Min && p.ProductPrice <= r.Max)).ToList();
+            }
+
+            return PartialView("_ReturnProducts", filteredProducts);
+           
+        }
 
         // GET: Products/Create
+        [Authorize]
+
         public IActionResult Create()
         {
-            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryId");
-            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorId");
-            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeId");
+            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryName");
+            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorName");
+            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeName");
             return View();
         }
 
@@ -119,6 +157,8 @@ namespace Eshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public async Task<IActionResult> Create([Bind("ProductId,ProductName,ProductDecription,CatogeryId,ProductPrice,ProductDiscount,ProductPhoto,SizeId,ColorId,IsTrend,IsNew")] Product product)
         {
             if (ModelState.IsValid)
@@ -127,13 +167,14 @@ namespace Eshop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryId", product.CatogeryId);
-            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorId", product.ColorId);
-            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeId", product.SizeId);
+            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryName", product.CatogeryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorName", product.ColorId);
+            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeName", product.SizeId);
             return View(product);
         }
 
         // GET: Products/Edit/5
+        [Authorize]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null || _context.Products == null)
@@ -146,9 +187,9 @@ namespace Eshop.Controllers
             {
                 return NotFound();
             }
-            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryId", product.CatogeryId);
-            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorId", product.ColorId);
-            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeId", product.SizeId);
+            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryName", product.CatogeryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorName", product.ColorId);
+            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeName", product.SizeId);
             return View(product);
         }
 
@@ -157,6 +198,8 @@ namespace Eshop.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [Authorize]
+
         public async Task<IActionResult> Edit(int id, [Bind("ProductId,ProductName,ProductDecription,CatogeryId,ProductPrice,ProductDiscount,ProductPhoto,SizeId,ColorId,IsTrend,IsNew")] Product product)
         {
             if (id != product.ProductId)
@@ -184,13 +227,15 @@ namespace Eshop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryId", product.CatogeryId);
-            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorId", product.ColorId);
-            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeId", product.SizeId);
+            ViewData["CatogeryId"] = new SelectList(_context.Categorys, "CategoryId", "CategoryName", product.CatogeryId);
+            ViewData["ColorId"] = new SelectList(_context.Colors, "ColorId", "ColorName", product.ColorId);
+            ViewData["SizeId"] = new SelectList(_context.Sizes, "SizeId", "SizeName", product.SizeId);
             return View(product);
         }
 
         // GET: Products/Delete/5
+        [Authorize]
+
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null || _context.Products == null)
