@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Eshop.Data;
 using Eshop.Models;
+using Eshop.Models.ViewModel;
 
 namespace Eshop.Controllers
 {
@@ -18,12 +19,64 @@ namespace Eshop.Controllers
         {
             _context = context;
         }
-
+        public int PageSize = 6;
         // GET: Products
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int PageIndex=1)
         {
-            var applicationDbContext = _context.Products.Include(p => p.Category).Include(p => p.Color).Include(p => p.Size);
-            return View(await applicationDbContext.ToListAsync());
+            PagingInfo pagingInfo = new PagingInfo
+            {
+                PageSize = PageSize,
+                PageIndex = PageIndex,
+                TotalCount = _context.Products.Count()
+            };
+            if (PageIndex < 1)
+            {
+                PageIndex = 1; // Đặt về trang đầu tiên
+            }
+            else if (PageIndex > pagingInfo.TotalPages)
+            {
+                PageIndex = pagingInfo.TotalPages; // Đặt về trang cuối cùng
+            }
+            return View(
+                new ProductListViewmodel()
+                {
+                    Products = _context.Products.Skip((PageIndex-1)*PageSize).Take(PageSize)
+                    ,
+                   PagingInfo = pagingInfo
+                });
+            ;
+        }
+       // [HttpPost]
+        public async Task<IActionResult> Search(string keywork=null,int PageIndex = 1)
+        {
+              PagingInfo pagingInfo = new PagingInfo
+              {
+                  PageSize = PageSize,
+                  PageIndex = PageIndex,
+                  TotalCount = String.IsNullOrEmpty(keywork)
+    ? _context.Products.Count()
+    : _context.Products.Where(p => p.ProductName.Contains(keywork)).Count()
+        };
+            var product = String.IsNullOrEmpty(keywork)?_context.Products:_context.Products.Where(p=>p.ProductName.Contains( keywork));
+              if (PageIndex < 1)
+              {
+                  PageIndex = 1; // Đặt về trang đầu tiên
+              }
+              else if (PageIndex > pagingInfo.TotalPages)
+              {
+                  PageIndex = pagingInfo.TotalPages; // Đặt về trang cuối cùng
+              }
+              return View("Index",
+                  new ProductListViewmodel()
+                  {
+                      Products = product.Skip((PageIndex - 1) * PageSize).Take(PageSize)
+                      ,
+                      PagingInfo = pagingInfo
+                      ,
+                      keywork=keywork
+                  });
+              ;
+          
         }
         public async Task<IActionResult> ProductByCategory(int categoryid)
         {

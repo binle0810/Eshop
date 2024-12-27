@@ -5,116 +5,119 @@ build_property.UsingMicrosoftNETSdkWeb = true
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
 build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Eshop
 build_property.RootNamespace = Eshop
-build_property.ProjectDir = D:\Bài tập c#\Eshop\Eshop\
+build_property.ProjectDir = D:\Bài tập c#\Eshop\eshop\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\Bài tập c#\Eshop\Eshop
+build_property.MSBuildProjectDirectory = D:\Bài tập c#\Eshop\eshop
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Cart/Cart.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Cart/Cart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDYXJ0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Categories/Create.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Categories/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Categories/Delete.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Categories/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Categories/Details.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Categories/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Categories/Edit.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Categories/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Categories/Index.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Categories/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Home/Index.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Home/Privacy.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Products/Create.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Products/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Products/Delete.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Products/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Products/Details.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Products/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Products/Edit.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Products/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Products/Index.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Products/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Components/CartWidget/default.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Components/CartWidget/default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcQ2FydFdpZGdldFxkZWZhdWx0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Components/ImageNavbar/Default.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Components/ImageNavbar/Default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcSW1hZ2VOYXZiYXJcRGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Components/Navbar/default.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Components/Navbar/default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmF2YmFyXGRlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Components/New/default.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Components/New/default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcTmV3XGRlZmF1bHQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Components/Trend/default.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Components/Trend/default.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENvbXBvbmVudHNcVHJlbmRcZGVmYXVsdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/Error.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/_LoginPartial.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/_Product.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/_Product.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Qcm9kdWN0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/_ViewImports.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/_ViewStart.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Bài tập c\#/Eshop/Eshop/Views/Shared/_Layout.cshtml]
+[D:/Bài tập c\#/Eshop/eshop/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-8v6rs3dmj2

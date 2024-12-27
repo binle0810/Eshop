@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Eshop.Models.Product>
+﻿@using Eshop.Models.ViewModel
+@model ProductListViewmodel
 
 @{
     ViewData["Title"] = "Index";
@@ -165,7 +166,7 @@
                             </div>
                         </div>
                     </div>
-                    @foreach(var item in Model){
+                    @foreach(var item in Model.Products){
                     <div class="col-lg-4 col-md-6 col-sm-12 pb-1">
                         <div class="card product-item border-0 mb-4">
                             <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
@@ -187,17 +188,22 @@
                     <div class="col-12 pb-1">
                         <nav aria-label="Page navigation">
                           <ul class="pagination justify-content-center mb-3">
-                            <li class="page-item disabled">
-                              <a class="page-link" href="#" aria-label="Previous">
+                            <li class="page-item ">
+                              <a class="page-link" href="/Products/Search?keywork=@Model.keywork&pageindex=@(Model.PagingInfo.PageIndex-1)" aria-label="Previous">
                                 <span aria-hidden="true">&laquo;</span>
                                 <span class="sr-only">Previous</span>
                               </a>
                             </li>
-                            <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            @for (int i = 1; i <= Model.PagingInfo.TotalPages; i++)
+                            {
+        <li class="page-item @(i == Model.PagingInfo.PageIndex ? "active" : "")">
+                <a class="page-link" href="/Products/Search?keywork=@Model.keywork&pageindex=@i">@i</a>
+        </li>
+                            }
+
+
                             <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a class="page-link" href="/Products/Search?keywork=@Model.keywork&pageindex=@(Model.PagingInfo.PageIndex+1)" aria-label="Next">
                                 <span aria-hidden="true">&raquo;</span>
                                 <span class="sr-only">Next</span>
                               </a>
