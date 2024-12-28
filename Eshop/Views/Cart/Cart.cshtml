@@ -4,7 +4,8 @@
 @{
 }
 @model Cart
-
+@if (!(Model == null))
+                        {
  <!-- Cart Start -->
     <div class="container-fluid pt-5">
         <div class="row px-xl-5">
@@ -19,32 +20,41 @@
                             <th>Remove</th>
                         </tr>
                     </thead>
+                
                     <tbody class="align-middle">
-                        @foreach(var item in Model?.Lines){
-                        var pricediscount = (decimal.Round((decimal)item.Product.ProductPrice * (1 - (decimal)item.Product.ProductDiscount), 2));
-                        <tr>
-                            <td class="align-middle"><img src="@item.Product.ProductPhoto" alt="" style="width: 50px;"> @item.Product.ProductName</td>
-                            <td class="align-middle">@pricediscount</td>
-                            <td class="align-middle">
-                                <div class="input-group quantity mx-auto" style="width: 100px;">
-                                    <div class="input-group-btn">
+
+                      
+                    @foreach (var item in Model?.Lines)
+                        {
+                        
+                            var pricediscount = (decimal.Round((decimal)item.Product.ProductPrice * (1 - (decimal)item.Product.ProductDiscount), 2));
+                            <tr>
+                                <td class="align-middle"><img src="@item.Product.ProductPhoto" alt="" style="width: 50px;"> @item.Product.ProductName</td>
+                                <td class="align-middle">@pricediscount</td>
+                                <td class="align-middle">
+                                    <div class="input-group quantity mx-auto" style="width: 100px;">
+                                        <div class="input-group-btn">
                                             <a href="/Cart/removeonecart/?productid=@item.Product.ProductId"  class="btn btn-sm btn-primary btn-minus" >
-                                        <i class="fa fa-minus"></i>
-                                        </a>
-                                    </div>
-                                    <input type="text" class="form-control form-control-sm bg-secondary text-center" value="@item.Quantity">
-                                    <div class="input-group-btn">
+                                                <i class="fa fa-minus"></i>
+                                            </a>
+                                        </div>
+                                        <input type="text" class="form-control form-control-sm bg-secondary text-center" value="@item.Quantity">
+                                        <div class="input-group-btn">
                                             <a href="/Cart/addtocart/?productid=@item.Product.ProductId" class="btn btn-sm btn-primary btn-plus">
-                                            <i class="fa fa-plus"></i>
-                                        </a>
+                                                <i class="fa fa-plus"></i>
+                                            </a>
+                                        </div>
                                     </div>
-                                </div>
-                            </td>
-                            <td class="align-middle">@(item.Quantity*pricediscount)</td>
-                            <td class="align-middle"><a href="/Cart/RemoveCart/?productid=@item.Product.ProductId" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></a></td>
-                        </tr>
-                   }
-                    </tbody>
+                                </td>
+                                <td class="align-middle">@(
+                            item.Quantity * pricediscount
+)</td>
+                                <td class="align-middle"><a href="/Cart/RemoveCart/?productid=@item.Product.ProductId" class="btn btn-sm btn-primary"><i class="fa fa-times"></i></a></td>
+                            </tr>
+                        }
+
+                    
+                </tbody>
                 </table>
             </div>
             <div class="col-lg-4">
@@ -81,4 +91,4 @@
             </div>
         </div>
     </div>
-    <!-- Cart End -->
+    <!-- Cart End -->}

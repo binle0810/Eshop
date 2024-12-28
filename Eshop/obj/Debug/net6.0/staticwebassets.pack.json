@@ -85,6 +85,46 @@
       "PackagePath": "staticwebassets\\img\\product-1.jpg"
     },
     {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-10.jpg",
+      "PackagePath": "staticwebassets\\img\\product-10.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-11.jpg",
+      "PackagePath": "staticwebassets\\img\\product-11.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-12.jpg",
+      "PackagePath": "staticwebassets\\img\\product-12.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-13.jpg",
+      "PackagePath": "staticwebassets\\img\\product-13.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-14.jpg",
+      "PackagePath": "staticwebassets\\img\\product-14.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-15.jpg",
+      "PackagePath": "staticwebassets\\img\\product-15.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-16.jpg",
+      "PackagePath": "staticwebassets\\img\\product-16.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-17.jpg",
+      "PackagePath": "staticwebassets\\img\\product-17.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-18.jpg",
+      "PackagePath": "staticwebassets\\img\\product-18.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-19.jpg",
+      "PackagePath": "staticwebassets\\img\\product-19.jpg"
+    },
+    {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-2.jpg",
       "PackagePath": "staticwebassets\\img\\product-2.jpg"
     },
@@ -111,6 +151,10 @@
     {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-8.jpg",
       "PackagePath": "staticwebassets\\img\\product-8.jpg"
+    },
+    {
+      "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\product-9.jpg",
+      "PackagePath": "staticwebassets\\img\\product-9.jpg"
     },
     {
       "Id": "D:\\Bài tập c#\\Eshop\\eshop\\wwwroot\\img\\user.jpg",
